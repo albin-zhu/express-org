@@ -15,8 +15,9 @@ theme_config = yaml.safeLoad(fs.readFileSync('_theme.yml', 'utf8'));
 var routes = require('./routes/index')
 var users = require('./routes/users');
 var tags = require('./routes/tags');
-var cats = require('./routes/cats')
-var archives = require('./routes/archives')
+var cats = require('./routes/cats');
+var archives = require('./routes/archives');
+var post = require('./routes/post');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use('/cats', cats);
 app.use('/archives', archives);
 app.use('/', routes);
 app.use('/orgs', users);
+app.use('/post', post);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

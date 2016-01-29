@@ -13,11 +13,6 @@ menu:
     url: /tags
     intro: "Tags"
     icon: "fa fa-tags"
-  - title: About
-    url: /orgs/about/about.org
-    intro: "About me."
-    icon: "fa fa-user"
-
 links:
   - title: "albinyewen"
     url: http://www.github.com/albinyewen
