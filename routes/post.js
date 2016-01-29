@@ -15,16 +15,22 @@ router.post('/', function(req, res) {
                 res.send(err);
             }else {
                 if(commits.removed.length) {
-                    if(file.match(/orgs\/.*.\w.org/)){
-                        db.reload();
-                        return;
+                    for(var i = 0; i < commits.removed.length; i++) {
+                        var file = commits.removed[i];
+                        if(file.match(/orgs\/.*.\w.org/)){
+                            db.reload();
+                            return;
+                        }
                     }
                 };
 
                 if(commits.modified.length) {
-                    if(file.match(/orgs\/.*.\w.org/)){
-                        db.reload();
-                        return;
+                    for(var i = 0; i < commits.modified.length; i++) {
+                        var file = commits.modified[i];
+                        if(file.match(/orgs\/.*.\w.org/)){
+                            db.reload();
+                            return;
+                        }
                     }
                 };
 
