@@ -5,7 +5,9 @@ var exec = require('child_process').exec;
 
 /* GET home page. */
 router.post('/', function(req, res) {
+    console.log(req);
     var commits = req.body.commits;
+    console.log(commits);
     var git_path = path.resolve('.');
     exec("cd " + git_path + "&& git pull origin master", function(err, stdout, stderr) {
         if(err) {
