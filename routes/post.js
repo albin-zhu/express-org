@@ -18,7 +18,7 @@ router.post('/', function(req, res) {
                     for(var i = 0; i < commits.removed.length; i++) {
                         var file = commits.removed[i];
                         if(file.match(/orgs\/.*.\w.org/)){
-                            db.reload();
+                            db.reload("orgs/");
                             return;
                         }
                     }
@@ -28,7 +28,7 @@ router.post('/', function(req, res) {
                     for(var i = 0; i < commits.modified.length; i++) {
                         var file = commits.modified[i];
                         if(file.match(/orgs\/.*.\w.org/)){
-                            db.reload();
+                            db.reload("orgs/");
                             return;
                         }
                     }
