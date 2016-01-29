@@ -28,10 +28,16 @@ router.post('/', function(req, res) {
                     }
                 };
 
-                commits.added.forEach(function(file) {
-                    if(file.match(/orgs\/.*.\w.org/))
-                        db.add(file);
-                });
+                var added = commits.added;
+                var flag = false;
+                for(var i = 0; i < added.length; i++) {
+                    if(added[i].match(/orgs\/.*.\w.org/)) {
+                        db.add(added[i]);
+                        flag = true;
+                    }
+                }
+                if(flag) db.save();
+
                 res.send(200);
             }
         })
