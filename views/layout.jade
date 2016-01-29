@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    include ./includes/head.jade
+    mixin head(doc.title)
+  body
+    include ./includes/navgation.jade
+    mixin navbar(theme.menu, config.title)
+    .container
+      .content
+        .page-header
+          h1= doc.title
+        .row.page
+          .col-md-9
+            .slogan
+              i.fa.fa-heart
+              #{theme.slogan}
+            #top_earch
+            .mypage
+              block content
+              // page
+          .col-md-3
+            #sidebar
+              .widget
+                h4= "分类"
+                ul.tag_box.inline.list-unstyled
+                  each cat, i in site.categories
+                    li
+                      a(href="/cats/#{i}")= i
+                        span= cat.length
+              .widget
+                h4= "标签"
+                ul.tag_box.inline.list-unstyled
+                  each tag, i in site.tags
+                    li
+                      a(href="/tags/#{i}")= i
+                        span= tag.legnth
+              .widget
+                h4= "最近更新"
+                ul.entrylist-unstyled
+                  each item, i in site.recent
+                    li
+                      a(href="/#{item.uri}")
+                        i.fa.fa-file-o= item.title
+              .widget
+                h4= "链接"
+                ul.blogroll.list-unstyled
+                  each link, i in theme.links
+                    li
+                      i(class="#{link.icon}")
+                      a(href="#{link.url}" title="#{link.intro}" target="_blank")= link.title
+    .container-narrow
+      footer
+        include ./includes/footer.jade
+        mixin footer("albin")
+    include ./includes/after_footer.jade

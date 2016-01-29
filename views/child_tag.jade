@@ -1,0 +1,9 @@
+extends layout
+block content
+  .archive
+    h4.archive-ul.show(data-toggle="collapse" data-target="##{the_tag}")= the_tag
+      b.caret
+    ul.collapse.in(id="modal-#{the_tag}")
+      each post, i in posts
+        li.listing-item
+          a(href="/#{post.uri}")= post.title

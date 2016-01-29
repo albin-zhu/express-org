@@ -1,0 +1,24 @@
+extends layout
+block content
+  - var count = 0
+  each item, i in site.recent
+    h3.title
+      .date= item.date
+      .article-title
+        a(href="/#{item.uri}")= item.title
+    ul.tag_box.inline.list-unstyled#dynamic-tags
+      li
+        a(href="/cats/#{doc.category}")
+          i.fa.fa-folder= " " + item.category
+      each tag, i in item.tags
+        li
+          a(href="/tags/#{tag}")
+            i.fa.fa-tags= " " + tag
+    each img, i in item.imgs
+      div!= img
+    .entry
+      .row(id="toc_#{count++}")!= item.tocHTML
+          
+          
+        
+    

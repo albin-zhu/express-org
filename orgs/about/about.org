@@ -1,0 +1,64 @@
+#+TITLE: About
+#+DATE: <2015-01-19 一 18:12>
+#+TAGS: about, albin
+
+* 基础信息
+#+begin_src python
+# 生成一个员工
+employer = new Programer(name = "Albin", age = 28, sex = Sex.MALE)
+#+end_src
+
+** 工作经验
+#+begin_src python
+# 打印工作经验配置表
+employer.work_experience( '2011-07', '2015-5')
+#+end_src
+
+#+begin_src yaml
+工作经验:
+  - 上海冰动娱乐(页游部门):
+    起始: 2011-07~ 2014-04
+    项目:
+      - 最三国:
+        岗位: 前端程序员
+        语言: as3
+        职责: 部分ui
+      - 动物大战:
+        岗位: 前端程序员
+        语言: as3
+        职责:
+          - 战斗模块
+          - 工具开发
+      - 暴走的指尖:
+        岗位: 前端程序员
+        语言: [c++,  javascript]
+        职责: [底层搭建, protobuf-cocos2d-js-tools, 热更新部署工具]
+  - 爱游爱戏:
+    起始: 2014-04~2015-05
+    项目:
+      - SD敢达大作战:
+        语言: as3
+        岗位: 前端主程
+        职责: --->
+          汉化工具, 本地化开发, 更换底层资源加载方式, 添加robotlegs,
+          部署工具开发, 服务器搭建, jira-confluences工具, git-server
+      - 劲舞团demo
+      - 劲跑团demo
+#+end_src
+
+** 语言能力
+#+begin_src python
+pro_skills = filter(lambda skill.name : skill.level >= SkillLevel.PRO, employer.skills)
+print pro_skills
+["python", "nodejs", "as3", "c#", "c++"]
+#+end_src
+
+** 屌丝吐糟
+#+begin_src
+employer.thrown_down("""
+做为一个标准的程序员,这行业的特性我几乎都有,我一直想做一个自己喜欢,或者能被大众喜欢的游戏,无奈一直
+不能如愿.在行业里摸爬滚打这些年,经历了ios开发到as3 webgame的颠峰,在转而为cocoser,直至如今的
+unity.经历了无数上海凌晨街上稀疏的人影,游戏demo开始时的憧憬,败北时老板的背影,我一度想过退缩,但
+屌丝不服输的品质然我越挫越勇,以及对代码的执恋,让我坚定的相信专心致意毕力于其事而后可!
+""")
+#+end_src

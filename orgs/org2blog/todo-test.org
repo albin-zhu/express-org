@@ -1,0 +1,10 @@
+#+title: TODO-TEST
+#+date: <2016-01-27 三>
+#+tags: emacs, org-mode, test
+
+* TODO 客户端js解析org
+  SCHEDULED: <2016-01-27 三>
+** DONE 对org中的分类与标签存在本地json，用与生成基础页面
+** DONE 把图片同步到七牛，同时支持本地与线上显示
+   SCHEDULED: <2016-01-25 一>
+** TODO 同步到服务器

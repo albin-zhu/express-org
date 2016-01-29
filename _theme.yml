@@ -1,0 +1,49 @@
+slogan: "不务正业的程序猿"
+
+menu:
+  - title: Archives
+    url: /archives
+    intro: "All the articles."
+    icon: "fa fa-archive"
+  - title: Categories
+    url: /cats
+    intro: categories
+    icon: "fa fa-folder"
+  - title: Tags
+    url: /tags
+    intro: "Tags"
+    icon: "fa fa-tags"
+  - title: About
+    url: /orgs/about/about.org
+    intro: "About me."
+    icon: "fa fa-user"
+
+links:
+  - title: "albinyewen"
+    url: http://www.github.com/albinyewen
+    intro: ""
+    icon: "fa fa-github"
+  - title: "hialbin"
+    url: https://www.facebook.com/hialbin
+    intro: ""
+    icon: "fa fa-facebook"
+  - title: "zybyy"
+    url: https://twitter.com/zybyy
+    intro: ""
+    icon: "fa fa-twitter"
+
+rss: /atom.xml
+fancybox: true
+favicon: favico.jpg
+duoshuo_shortname: albin
+
+# Analytics
+google_analytics:
+  enable: false
+  siteid:
+baidu_tongji:
+  enable: false
+  siteid:
+
+# search
+# swiftype_key: ZP2ZSuHgipSZfRyU8uTR

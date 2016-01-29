@@ -1,0 +1,29 @@
+extends layout
+block content
+  #table-of-contents
+    h2 目录
+    #text-table-of-contents!= doc.tocHTML
+  h1= doc.title
+  ul.tag_box.inline.list-unstyled#dynamic-tags
+    li
+      a(href="/cats/#{doc.category}")
+        i.fa.fa-folder= " " + doc.category
+    each tag, i in doc.tags
+      li
+        a(href="/tags/#{tag}")
+          i.fa.fa-tags= " " + tag
+  #content!= doc.contentHTML
+  if theme.duoshuo_shortname
+    section#comment
+      h3.title 留言
+      .ds-thread(data-thread-key="#{doc.uri}", data-title="#{doc.title}", data-url="#{doc.uri}")
+    script      
+      |var duoshuoQuery = { short_name: '#{theme.duoshuo_shortname}' };
+      |(function() {
+      |var ds = document.createElement('script');
+      |ds.type = 'text/javascript';
+      |ds.async = true;
+      |ds.src = 'http://static.duoshuo.com/embed.js';
+      |ds.charset = 'UTF-8';
+      |(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+      |})();

@@ -1,0 +1,11 @@
+extends layout
+block content
+  .archive
+    each v, k in site.archives
+      h4.archive-ul.show(data-toggle="collapse" data-target="##{v.year}")= v.year
+        b.caret
+      ul.collapse.in(id="#{v.year}")
+        each post, i in v.posts
+          li.listing-item
+            span.date_class= post.date + " » "
+              a(href="/#{post.uri}")= post.title
