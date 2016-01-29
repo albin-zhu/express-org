@@ -6,27 +6,38 @@ var exec = require('child_process').exec;
 /* GET home page. */
 router.post('/', function(req, res) {
     console.log(req);
-    var commits = req.body.commits;
-    console.log(commits);
-    var git_path = path.resolve('.');
-    exec("cd " + git_path + "&& git pull origin master", function(err, stdout, stderr) {
-        if(err) {
-            res.send(err);
-        }else {
-            commits.added.forEach(function(file) {
-                db.add(file);
-            });
+    try{
+        var commits = req.body.commits;
+        console.log(commits);
+        var git_path = path.resolve('.');
+        exec("cd " + git_path + "&& git pull origin master", function(err, stdout, stderr) {
+            if(err) {
+                res.send(err);
+            }else {
+                if(commits.removed.length) {
+                    if(file.match(/orgs\/.*.\w.org/)){
+                        db.reload();
+                        return;
+                    }
+                };
 
-            commits.removed.forEach(function(){
-                db.remove(file);
-            });
+                if(commits.modified.length) {
+                    if(file.match(/orgs\/.*.\w.org/)){
+                        db.reload();
+                        return;
+                    }
+                };
 
-            commits.modified.forEach(function(){
-                db.mod(file);
-            });
-            res.send(200);
-        }
-    })
+                commits.added.forEach(function(file) {
+                    if(file.match(/orgs\/.*.\w.org/))
+                        db.add(file);
+                });
+                res.send(200);
+            }
+        })
+    } catch(e) {
+        res.send(e);
+    }
 });
 
 module.exports = router;
