@@ -29,8 +29,9 @@ npm install q
      表示一个 promise 的拒绝原因......
 
 ** Samples
-[[https://github.com/albinyewen/sv-html][*** 依赖
-save single html]], 保存一个页面，包含css,js and images. 一个例子，目前不保存css以及js中的引用，比如图象字体等.
+
+*** 依赖
+保存一个页面，包含css,js and images. 一个例子，目前不保存css以及js中的引用，比如图象字体等.
 用urllib get 页面，mkdirp创建文件夹，cheerio解析页面。
 
 #+begin_src js
@@ -44,7 +45,6 @@ var cheerio = require('cheerio'),
 #+end_src
 
 *** Promise基础用法
-
 #+begin_src js
 new Promise((resolve, reject)=> { 
     // do sthero
@@ -113,3 +113,5 @@ function save_file(file) {
         ;
     }
 #+end_src
+
+[[https://github.com/albinyewen/sv-html][complete]]

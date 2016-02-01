@@ -1,9 +1,6 @@
 #+TITLE: python学习笔记
 #+DATE: <2016-01-19 五 18:12>
 #+TAGS: albin
-#+LAYOUT: post
-#+CATEGORIES: 笔记
-#+OPTIONS: toc:nil
 #+DESCRIPTION: 粗略介绍一下python,简单入门，以及几个例子
 
 * 为什么会有这个东西
