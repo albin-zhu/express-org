@@ -82,7 +82,7 @@ org-blog:
 }
 #+end_src
 *** router
-那对应的route(用url-rewrite表示): */*, */archives*, */cat*, */cat/:cat*, */tag*, */tag/:tag* */orgs/:cat/:uri/* 。
+那对应的route(用url-rewrite表示): */*, */archives*, */cat*, */cat/:cat*, */tag*, */tag/:tag*, */orgs/:cat/:uri/*  。
 *** template
 **** index 
      首页简单一点，显示近期十篇文章的目录，以文章中的图片
