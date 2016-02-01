@@ -1,4 +1,4 @@
-#+title: Express与org-mode搭建简单和blog
+#+title: Express与org-mode搭建简单的blog
 #+date: <2016-02-01 一>
 #+tags: nodejs, org-mode, express, jade, github-web-hooks
 #+description: 从零开始搭建一个blog
