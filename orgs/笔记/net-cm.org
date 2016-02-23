@@ -2,7 +2,7 @@
 #+date: <2016-01-27 三>
 #+tags: emacs, net-cm
 
-* #[i:fa-music] 在Emacs播放音乐
+* $[i:fa-music] 在Emacs播放音乐
 [[http://github.com/albinyewen/net-cm][net-cm]]
 
 emacs可以调用mplayer来播放音乐,已经有很多实现的方式来实现emacs下听音的mode.时下最热门的音乐软件莫过于网易云音乐,今天就来实现一个简单的网易云音乐Emacs版本.
@@ -12,7 +12,7 @@ emacs可以调用mplayer来播放音乐,已经有很多实现的方式来实现e
  * emacs 咱就是在这里边整这个事的
  * mplayer 播放音乐
 
-** #[i:fa-arrow-right] 播放url
+** $[i:fa-arrow-right] 播放url
 确定mplayer已经装好,在osx下
 #+begin_src shell
 brew install mplayer
@@ -78,7 +78,7 @@ elisp的函数命名真的是很好玩,不像我们现在的风格,比如set-pro
 #+end_src
 ```
 
-* #[i:fa-book] 网易云音乐 基础API
+* $[i:fa-book] 网易云音乐 基础API
 以下是这次我要用到的一些基础api,登陆暂用不上.我是直接在每条request的header中写了cookie,这个cookie从web上,或者客户端里都能拿到的,最简单的是charles或者chrome的截包工具抓取一下就可以.
 #+begin_src elisp
 (defconst batch-url "http://music.163.com/batch?%2Fapi%2Fdiscovery%2Fhotspot=%7B%22limit%22%3A12%7D" "批量api地址") ;;获取歌单
