@@ -5,7 +5,8 @@ mixin navbar(menus, title)
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href="/")= title
+      a.navbar-brand(href="/")
+        i.fa.fa-home= title
       .collapse.navbar-collapse.nav-menu
         ul.nav.navbar-nav
           each menu, i in menus
