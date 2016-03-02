@@ -1,0 +1,121 @@
+doctype html
+html
+  head
+    link(rel="stylesheet" type="text/css" href="/css/617566.css" media="all")
+    script(type="text/javascript" src="/js/977946.js")
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    title= doc.title
+    style(type='text/css')
+      |img.wp-smiley,
+      |img.emoji {
+      |display: inline !important;
+      |border: none !important;
+      |box-shadow: none !important;
+      |height: 1em !important;
+      |width: 1em !important;
+      |margin: 0 .07em !important;
+      |vertical-align: -0.1em !important;
+      |background: none !important;
+      |padding: 0 !important;
+      |.arve-thumb-wrapper { max-width: 500px; }.arve-normal-wrapper.alignleft, .arve-normal-wrapper.alignright, .arve-normal-wrapper.aligncenter { max-width: 500px; }
+      |.mc4wp-form input[name="_mc4wp_required_but_not_really"] { display: none !important; }
+      |}
+    link(rel='stylesheet' id='pluto-main-less-css' href='/css/pluto-main-less.css' media="all")
+    script(type="text/javascript" src="/js/yjp2cxg.js")
+  body(class="home page page-id-407 page-template page-template-page-masonry-condensed page-template-page-masonry-condensed-php menu-position-left menu-trigger-click no-sidebar not-wrapped-widgets with-infinite-scroll page-fluid-width wpb-js-composer js-comp-ver-4.2.3 vc_responsive")
+    script(type="text/javascript" src="/js/4a9906.js")
+    script
+      |(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      |(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      |m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      |})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      |
+      |ga('create', 'UA-42863888-6', 'pinsupreme.com');
+      |ga('send', 'pageview');
+    menu-block.hidden-on-smaller-screens
+      .logo
+        a(href="/")
+          img(src="/imgs/logo@2x.png")
+          span 程序猿在魔都
+      form(role="search" method="get" class="search-form" action="/")
+        label
+          span.screen-render-text Search for:
+          input(type="search" placeholder="Search & help").search-field
+        input(type="submit" value="Search").search-submit
+      .divider
+      .os_menu
+      .divider
+      .zilla-social.size-32px
+        each link, i in theme.links
+          li
+            i(class="#{link.icon}")
+              a(href="#{link.url}" title="#{link.intro}" target="_blank")= link.title
+  .menu-toggler-w
+    a(herf="#").menu-toggler
+      i.fa.os-icon-bars
+      span.menu-toggler-label Menu
+    a(href="/").logo
+      img(src="/imgs/logo@2x.png")
+      span 程序猿在魔都
+  .main-content-w
+    .main-content-i
+      .content.side-padded-content
+        #primary-content.index-isotope.v3(data-layout-mode="masonry")
+          each item, i in site.recent
+            .item-isotope
+              article(id='{i}' class="pluto-post-box post-164 post type-post status-publish format-standard has-post-thumbnail hentry category-main-dish tag-desert tag-nuts tag-vanilla")
+                .post-body
+                  .post-top-share
+                    i.fa.os-icon-plus.share-activator-icon.share-activator
+                    span.share-activator-label.share-activator.caption Share
+                    .os_social-head-w
+                      .os_social
+                        a(class="os_social_twitter_share" href="http://twitter.com/share?url=http://biebb.cc/#{item.uri}&text=#{item.title}" target="_blank")
+                          img(src="/imgs/twitter.png" title="Twitter" class="os_social" alt="Tweet about this on Twitter")
+                .post-gallery-box.post-media-body
+                  div(id="#{item.uri}").flexslider
+                    ul.slides
+                      li
+                        each img, i in item.imgs
+                          img(src="#{img}")
+                .post-content-body
+                  h4.post-title.entry-title
+                    a(href="/#{item.uri}")= item.title
+                  .post-contet.entry-summary!= item.tocHTML
+                .post-meta.entry-meta
+                  ul.post-categories
+                    li
+                      a(href="/cats/#{item.category}")= item.category
+                    .meta-date
+                      i.fa.os-icon-clock-o
+                      time.entry-date.updated(datetime="#{item.date}")
+      footer.site-footer(role="contentinfo")
+        .site-info
+          .site-footer-i &copy; 2016 #{author} with help from <a href="http://orgmode.org/" target="_blank">Org-mode</a>.
+  a(href="#").os-back-to-top
+  .display-type
+  .copyright-tooltip= This photo is copyright protected
+  script
+    |var disqus_shortname = 'pinsupreme';
+    |      (function () {
+    |          var nodes = document.getElementsByTagName('span');
+    |          for (var i = 0, url; i < nodes.length; i++) {
+    |              if (nodes[i].className.indexOf('dsq-postid') != -1) {
+    |                  nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+    |                  url = nodes[i].parentNode.href.split('#', 1);
+    |                  if (url.length == 1) { url = url[0]; }
+    |                  else { url = url[1]; }
+    |                  nodes[i].parentNode.href = url + '#disqus_thread';
+    |              }
+    |          }
+    |          var s = document.createElement('script'); 
+    |          s.async = true;
+    |          s.type = 'text/javascript';
+    |          s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    |          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    |}());
+  script(type="text/javascript" src="/js/core.min.js")
+  script(type="text/javascript" src="/js/datepicker.min.js")
+  script(type="text/javascript" src="/js/532a46.js")

@@ -13,6 +13,7 @@ global_config = yaml.safeLoad(fs.readFileSync('_config.yml', 'utf8'));
 theme_config = yaml.safeLoad(fs.readFileSync('_theme.yml', 'utf8'));
 
 var routes = require('./routes/index')
+var pluto = require('./routes/pluto')
 var users = require('./routes/users');
 var tags = require('./routes/tags');
 var cats = require('./routes/cats');
@@ -34,6 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/tags', tags);
+app.use('/pluto', pluto);
 app.use('/cats', cats);
 app.use('/archives', archives);
 app.use('/', routes);
