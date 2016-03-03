@@ -1,0 +1,22 @@
+mixin sidebar(site)
+  .primary-sidebar-wrapper
+    #primary-sidebar.primary-sidebar.widget-area(role="complementary")
+      aside#widget_tptn_pop-2.widget-4.widget-even.widget.widget_widget_tptn_pop
+        h1.widget-title Popular Posts
+        tptn_posts.tptn_posts_widget
+          ul
+            each item, i in site.recent
+              li
+                a(href="/#{item.uri}")
+                  i.fa.fa-file-o= item.title
+      aside#tag_cloud-2.widget-6.widget-even.widget.widget_tag_cloud
+        h1.widget-title Popular Tags
+        .tagcloud
+          each tag, i in site.tags
+            a(href="/tags/#{i}" title="#{tag.length} topic").tag-link-14= i          
+      aside#categories-3.widget-7.widget-odd.widget.widget_categories
+        h1.widget-title Categories
+        ul
+          each cat, i in site.categories
+            li.cat-item.cat-item-2
+              a(href="/cats/#{i}" title="#{cat.length} article")= i              

@@ -1,0 +1,30 @@
+mixin articles(arts)
+  .content.side-padded-content
+    #primary-content.index-isotope.v3(data-layout-mode="masonry")
+      each item, i in arts
+        .item-isotope
+          article(id='{i}' class="pluto-post-box post-164 post type-post status-publish format-standard has-post-thumbnail hentry category-main-dish tag-desert tag-nuts tag-vanilla")
+            .post-body
+              .post-top-share
+                i.fa.os-icon-plus.share-activator-icon.share-activator
+                span.share-activator-label.share-activator.caption Share
+                .os_social-head-w
+                  .os_social
+                    a(class="os_social_twitter_share" href="http://twitter.com/share?url=http://biebb.cc/#{item.uri}&text=#{item.title}" target="_blank")
+                      img(src="/imgs/twitter.png" title="Twitter" class="os_social" alt="Tweet about this on Twitter")
+            .post-gallery-box.post-media-body
+              div(id="#{item.uri}").flexslider
+                ul.slides
+                  each img, i in item.imgs
+                    li!= img
+
+            .post-content-body
+              h4.post-title.entry-title
+                a(href="/#{item.uri}")= item.title
+              .post-contet.entry-summary!= item.tocHTML
+            .post-meta.entry-meta
+              ul.post-categories
+                li
+                  a(href="/cats/#{item.category}")= item.category
+              .meta-date
+                i.fa.os-icon-clock-o.entry-date.updated= " " + item.date
