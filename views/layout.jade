@@ -75,14 +75,8 @@ html
           input(type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:")
         input(type="submit" value="Search").search-submit
       .divider
-      .os_menu
-        block menu
-      .divider
-      if theme
-        .zilla-social.size-32px
-          each link, i in theme.links
-            a(href="#{link.url}" title="#{link.intro}" target="_blank")
-              i(class="#{link.icon} fa-3x") &nbsp;
+      block menu
+              
   // 隐藏边栏
   .menu-toggler-w
     a(herf="#").menu-toggler
@@ -98,7 +92,7 @@ html
   // 主要内容
   .main-content-w     
     if site
-      .primary-sidebar-wrapper(style="position:fixed;")
+      .primary-sidebar-wrapper(style="position:absoluted;")
           #primary-sidebar.primary-sidebar.widget-area(role="complementary")
             aside#widget_tptn_pop-2.widget-4.widget-even.widget.widget_widget_tptn_pop
               h1.widget-title Popular Posts
@@ -117,9 +111,17 @@ html
                 each cat, i in site.categories
                   li.cat-item.cat-item-2
                     a(href="/cats/#{i}" title="#{cat.length} article")= i  
+            if theme
+              aside#links.widget-9.widget-even.widget
+                h1.widget-title Links
+                each link, i in theme.links
+                  a(href="#{link.url}" title="#{link.intro}" target="_blank")
+                    i(class="fa-fw #{link.icon}")= "  "
             aside#copryright.widget-8.widget-odd.widget
               .site-info
                 .site-footer-i &copy; 2016 #{author} with help from <a href="http://orgmode.org/" target="_blank">Org-mode</a>.
+                    
+            
     .main-content-i
       block content
     
