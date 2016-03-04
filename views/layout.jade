@@ -98,8 +98,9 @@ html
               h1.widget-title Popular Posts
               .tptn_posts.tptn_posts_widget
                 each item, i in site.recent
-                  a(href="/#{item.uri}")
-                    i.fa.fa-file-o= item.title
+                  p
+                    i.fa.fa-file-o.fa-fw
+                    a(href="/#{item.uri}")= item.title
             aside#tag_cloud-2.widget-6.widget-odd.widget.widget_tag_cloud
               h1.widget-title Popular Tags
               .tagcloud
