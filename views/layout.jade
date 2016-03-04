@@ -16,6 +16,9 @@ html
     if doc && doc.title
       title= doc.title
     style(type='text/css')
+      |.article_max_height {
+      |max-height:200px;
+      |overflow:hidden;}
       |img.wp-smiley,
       |img.emoji {
       |display: inline !important;
@@ -33,6 +36,21 @@ html
     link(rel='stylesheet' id='pluto-main-less-css' href='/css/pluto-main-less.css' media="all")
     script(type="text/javascript" src="/js/yjp2cxg.js")
     // head end
+  mixin share_link(item)
+    a.os_social_twitter_share(href="http://twitter.com/share?url=http://biebb.cc/#{item.uri}&text=#{item.title}" target="_blank")
+      img(src="/imgs/twitter.png" title="Twitter" alt="Tweet about this on Twitter").os_social
+    if item.imgs
+      a.os_social_pinterest_share(target="_blank" href="//www.pinterest.com/pin/create/button/?url=http://biebb.cc/#{item.uri}&amp;media=#{item.imgs[0]}&amp;description=#{item.title}")
+        img(src="/imgs/pinterest.png" title="Pinterest" alt="pin on Pinterest").os_social
+    a.os_social_linkedin_share(href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://biebb.cc/#{item.uri}" target="_blank")
+      img(src="/imgs/linkedin.png" title="Linkedin" alt="share on linkedin").os_social
+    a.os_social_google_share(href="https://plus.google.com/share?url=http://biebb.cc/#{item.uri}" target="_blank")
+      img(src="/imgs/google.png" title="Google+" alt="share on Google+").os_social
+    a.os_social_email_share(href="mailto:?Subject=#{item.title}&amp;Body=%20http://biebb.cc/#{item.uri}")
+      img(src="/imgs/email.png" title="Twitter" alt="email this to someone").os_social
+    a.os_social_facebook_share(href="http://www.facebook.com/sharer.php?u=http://biebb.cc/#{item.uri}" target="_blank")
+      img(src="/imgs/facebook.png" title="Facebook" alt="share on Facebook").os_social
+          
   body(class="single single-post postid-161 single-format-standard menu-position-left menu-trigger-click sidebar-position-right not-wrapped-widgets with-infinite-scroll page-fixed-width wpb-js-composer js-comp-ver-4.2.3 vc_responsive")
     script(type="text/javascript" src="/js/4a9906.js")
     script

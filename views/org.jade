@@ -9,8 +9,7 @@ block content
             span.share-activator-label.share-activator.caption Share
             .os_social-head-w
               .os_social
-                a(class="os_social_twitter_share" href="http://twitter.com/share?url=http://biebb.cc/#{doc.uri}&text=#{doc.title}" target="_blank")
-                  img(src="/imgs/twitter.png" title="Twitter" class="os_social" alt="Tweet about this on Twitter")
+                mixin share_link(doc)
           a(href="#" class="single-post-top-reading-mode hidden-xs" data-message-on="Enter Reading Mode" data-message-off="Exit Reading Mode")
             i.fa.os-icon-eye
               span Enter Reading Mode
@@ -30,20 +29,25 @@ block content
                       i.fa.fa-tags= " " + tag
         .post-content.entry-conten
           #content!= doc.contentHTML
-        if theme.duoshuo_shortname
-          section#comment
-            h3.title 留言
-            .ds-thread(data-thread-key="#{doc.uri}", data-title="#{doc.title}", data-url="#{doc.uri}")
-          script      
-            |var duoshuoQuery = { short_name: '#{theme.duoshuo_shortname}' };
-            |(function() {
-            |var ds = document.createElement('script');
-            |ds.type = 'text/javascript';
-            |ds.async = true;
-            |ds.src = 'http://static.duoshuo.com/embed.js';
-            |ds.charset = 'UTF-8';
-            |(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-            |})();
+      .post-meta.entry-meta
+        .meta-like
+          iframe(src="//www.facebook.com/plugins/like.php?href=http://biebb.cc/#{doc.uri}&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=846692988676299" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowtransparency="true")
+        .os_social-foot-w.hidden-xs
+          .os_social
+            mixin share_link(doc)
+    if theme.duoshuo_shortname
+      section#comment
+        .ds-thread(data-thread-key="#{doc.uri}", data-title="#{doc.title}", data-url="#{doc.uri}")
+      script      
+        |var duoshuoQuery = { short_name: '#{theme.duoshuo_shortname}' };
+        |(function() {
+        |var ds = document.createElement('script');
+        |ds.type = 'text/javascript';
+        |ds.async = true;
+        |ds.src = 'http://static.duoshuo.com/embed.js';
+        |ds.charset = 'UTF-8';
+        |(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        |})();
 block menu
   aside#categories-3.widget-7.widget-even.widget.widget_categories!= doc.tocHTML
     
