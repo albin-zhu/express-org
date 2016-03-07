@@ -13,7 +13,6 @@ auto可以在声明变量时根据变量初始值的类型自动为此变量选�
 具体的参考[[https://zh.wikipedia.org/wiki/Auto_(C%252B%252B)][WIKI]]
 
 * [[fa fa-fw][]]  注意事项
-
 ** [[fa fa-fw][]] 推导规则
  - 去引用，会把表达式的引用去掉
  - 会去掉const等限定符
@@ -39,7 +38,7 @@ auto& a4 = a1; // std::vector<int, std::allocator<int> >&
 
 可以看到与上面的规则一致，使用的时候要注意一下。
 
-*** for in 或者其它迭代
+*** [[fa fa-fw][]] for in 或者其它迭代
 #+begin_src c++
 #include <iostream>
 #include <string>
@@ -87,4 +86,4 @@ int main()
 #+end_src
 上面的例子，可以看出在 for : 的时候不加&获得是拷贝即使是map,在protobuf中吃了好多次亏
 
-*** 以后发现再续
+*** [[fa fa-fw][ ]]以后发现再续
