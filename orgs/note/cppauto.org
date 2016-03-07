@@ -3,7 +3,7 @@
 #+tags: c++, c++11
 
 
-* $[i:fa-list] 简要说明
+* [[fa fa-fw][]] 简要说明
 auto可以在声明变量时根据变量初始值的类型自动为此变量选择匹配的类型。C++语言类似的关键字还有decltype。
 
 举例：对于值x=1；即可以声明：int x = 1或long x = 1，也可以直接声明auto x = 1。
@@ -12,14 +12,14 @@ auto可以在声明变量时根据变量初始值的类型自动为此变量选�
 
 具体的参考[[https://zh.wikipedia.org/wiki/Auto_(C%252B%252B)][WIKI]]
 
-* $[i:fa-warning]  注意事项
+* [[fa fa-fw][]]  注意事项
 
-** $[i:fa-arrow-right] 推导规则
+** [[fa fa-fw][]] 推导规则
  - 去引用，会把表达式的引用去掉
  - 会去掉const等限定符
  - 如果第一条规则显示加上引用 *&* , 第二条不生效
    
-*** 例子
+*** [[fa fa-fw][]] 例子
 #+begin_src c++
 const int v1 = 101; // const int
 auto v2 = v1; // int
@@ -31,8 +31,8 @@ auto a3 = a1; // std::vector<int, std::allocator<int> >
 auto& a4 = a1; // std::vector<int, std::allocator<int> >&
 #+end_src
 看一下调试信息
-#+ATTR_HTML:  :alt 
-[[gdb_small.png]]
+
+[[gdb_small.png][调试信息]]
 
 #+ATTR_HTML:  :alt 
 [[gdb_big.png]]

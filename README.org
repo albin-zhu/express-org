@@ -1,2 +1,4 @@
 * 简介
 用emacs来写东西，最好的莫过于org-mode。就想着用express,jade练练手，大致弄了一下。主题是从[[https://github.com/wzpan/hexo-theme-freemind][hexo-theme-freemind]] 那里翻过来的。
+
+
