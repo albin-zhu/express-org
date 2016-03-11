@@ -16,7 +16,8 @@ mixin articles(arts)
                 ul.slides
                   each img, i in item.imgs
                     li
-                      img(src="#{img}")
+                      a(href="/#{item.uri}")
+                        img(src="#{img}")
 
             .post-content-body
               h4.post-title.entry-title
