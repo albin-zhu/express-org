@@ -1,0 +1,100 @@
+extends layout
+block content
+  .content.side-padded-content.reading-mode-content
+    article#post-161.pluto-page-box.post.type-post.status-publish.format-standard
+      .post-body
+        .single-post-top-features
+          .single-post-top-share
+            i.fa.os-icon-plus.share-activator-icon.share-activator
+            span.share-activator-label.share-activator.caption Share
+            .os_social-head-w
+              .os_social
+                mixin share_link(doc)
+          a(href="#" class="single-post-top-reading-mode hidden-xs" data-message-on="Enter Reading Mode" data-message-off="Exit Reading Mode")
+            i.fa.os-icon-eye
+              span Enter Reading Mode
+        h1.post-title.entry-title= doc.title
+        .post-meta-top.entry-meta
+          .row
+            .col-md-6
+              .post-date= "Posted on " + doc.date        
+        .post-content.entry-conten
+          #content
+            #emulator
+            h2 Controls
+            table#controls
+              tr
+                th Button
+                th Player 1
+                th Player 2
+              tr
+                td Left
+                td Left
+                td Num-4
+              tr
+                td Right
+                td Right
+                td Num-6
+              tr
+                td Up
+                td Up
+                td Num08
+              tr
+                td Down
+                td Down
+                td Num-2
+              tr
+                td A
+                td X
+                td Num-7
+              tr
+                td B
+                td Z/Y
+                td Num-9
+              tr
+                td Start
+                td Enter
+                td Num-1
+              tr
+                td Select
+                td Ctrl
+                td Num-3
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/javascripts/jquery-2.0.3.min.js")
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/js/dynamicaudio-min.js" type="text/javascript" charset="utf-8")
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/js/nes.js" type="text/javascript" charset="utf-8")
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/js/utils.js" type="text/javascript" charset="utf-8")
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/js/cpu.js" type="text/javascript" charset="utf-8")
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/js/keyboard.js" type="text/javascript" charset="utf-8")
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/js/mappers.js" type="text/javascript" charset="utf-8")
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/js/papu.js" type="text/javascript" charset="utf-8")
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/js/ppu.js" type="text/javascript" charset="utf-8")
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/js/rom.js" type="text/javascript" charset="utf-8")
+            script(src="http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga/js/ui.js" type="text/javascript" charset="utf-8")
+            script(type="text/javascript" charset="utf-8")
+              |var nes;
+              |$(function(){
+              |  nes = new JSNES({
+              |    'ui': $('#emulator').JSNESUI(!{roms})
+              |  });
+              |});
+                
+      .post-meta.entry-meta
+        .meta-like
+          iframe(src="//www.facebook.com/plugins/like.php?href=http://biebb.cc/#{doc.uri}&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=846692988676299" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowtransparency="true")
+        .os_social-foot-w.hidden-xs
+          .os_social
+            mixin share_link(doc)
+    if theme.duoshuo_shortname
+      section#comment
+        .ds-thread(data-thread-key="#{doc.uri}", data-title="#{doc.title}", data-url="#{doc.uri}")
+      script      
+        |var duoshuoQuery = { short_name: '#{theme.duoshuo_shortname}' };
+        |(function() {
+        |var ds = document.createElement('script');
+        |ds.type = 'text/javascript';
+        |ds.async = true;
+        |ds.src = 'http://static.duoshuo.com/embed.js';
+        |ds.charset = 'UTF-8';
+        |(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        |})();
+ 

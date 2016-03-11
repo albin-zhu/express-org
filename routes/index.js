@@ -11,4 +11,11 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/jenes', function(req, res){
+  res.render("jsnes", {
+    doc: {title:"JSNES", date:"2016-03-11 五", uri:"/jsnes"},
+    roms: roms
+  })
+});
+
 module.exports = router;

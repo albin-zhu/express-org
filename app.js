@@ -19,6 +19,7 @@ var tags = require('./routes/tags');
 var cats = require('./routes/cats');
 var archives = require('./routes/archives');
 var post = require('./routes/post');
+var jsnes = require('./routes/jsnes');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/jsnes', jsnes);
 app.use('/tags', tags);
 app.use('/pluto', pluto);
 app.use('/cats', cats);

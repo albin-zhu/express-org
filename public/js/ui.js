@@ -36,7 +36,7 @@ if (typeof jQuery !== 'undefined') {
                  * Create UI
                  */
                 self.root = $('<div></div>');
-                self.screen = $('<canvas class="nes-screen" width="256" height="240"></canvas>').appendTo(self.root);
+                self.screen = $('<canvas class="nes-screen" width="256" height="240" style="max-width:100%; max-height:100%;"></canvas>').appendTo(self.root);
                 
                 if (!self.screen[0].getContext) {
                     parent.html("Your browser doesn't support the <code>&lt;canvas&gt;</code> tag. Try Google Chrome, Safari, Opera or Firefox!");
@@ -106,8 +106,8 @@ if (typeof jQuery !== 'undefined') {
                     }
                     else {
                         self.screen.animate({
-                            width: '512px',
-                            height: '480px'
+                            width: '100%',
+                            height: '100%'
                         });
                         self.buttons.zoom.attr("value", "zoom out");
                         self.zoomed = true;
@@ -172,7 +172,7 @@ if (typeof jQuery !== 'undefined') {
                  * Sound
                  */
                 self.dynamicaudio = new DynamicAudio({
-                    swf: nes.opts.swfPath+'dynamicaudio.swf'
+                    swf: "http://7xq9bs.com1.z0.glb.clouddn.com/albin-ga" + nes.opts.swfPath+'dynamicaudio.swf'
                 });
             };
         
