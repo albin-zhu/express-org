@@ -1,4 +1,7 @@
 extends layout
 block content
-  include ./includes/articles.jade
-  mixin articles(site.all)
+  include ./include/pluto.jade
+  .leaf-main-content-wrap
+    .leaf-main-content
+      each item, i in site.all
+        mixin pluto(item)

@@ -1,0 +1,24 @@
+#+title: 用Emacs画流程图
+#+date: <2015-07-30 四>
+#+tags: emacs, org
+
+* test
+
+#+begin_ditaa asciiExample.png -o -r -s
++----------+ edit +----------+   input +----------+ compile +----------+
+| refined  |<-----+ h,cpp    +-------->+ compiler,+-------->+Executable|
+|   h,cpp  |      |          |         | linker   |         |   File   |
++----------+      +----+-----+         +----------+         +----------+
+                       | input
+                       v
+                  +----------+
+                  | doxygen  |
+                  |          |
+                  +----+-----+
+                       | process
+                       v
+                  +----------+
+                  | Doxgen   |
+                  | Document |
+                  +----------+
+#+end_ditaa

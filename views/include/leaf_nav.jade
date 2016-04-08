@@ -1,0 +1,15 @@
+mixin leaf_nav(menus)
+  .leaf-nav
+    .all-nav
+      .home
+        a.home-logo(href="/")
+          h1
+            i.fa.fa-leaf    
+          = "首页"
+        each menu, i in menus
+          .item
+            .product
+              a(href="#{menu.url}" title="menu.intro")
+                h1
+                  i(class="#{menu.icon}")
+                = menu.title
